@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>History</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <thead>
+      <tr>
+        <th>Amount</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Real rate</th>
+        <th>Fixed rate</th>
+        <th>Calculated Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let conversion of historyConversion$ | async">
+        <td class="number">{{conversion.amount | number: '1.2-2'}}</td>
+        <td>{{conversion.currencyFrom}}</td>
+        <td>{{conversion.currencyTo}}</td>
+        <td [ngClass]="{active: conversion.activeRate === 'real'}"
+            class="number">{{conversion.realRate | number: '1.2-2'}}</td>
+        <td [ngClass]="{active: conversion.activeRate === 'fixed'}"
+            class="number">{{conversion.fixedRate | number: '1.2-2'}}</td>
+        <td class="number">{{conversion.calculatedAmount | number: '1.2-2'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+

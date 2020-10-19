@@ -1,0 +1,28 @@
+@import 'variables';
+
+table {
+  width: 100%;
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  tbody {
+    td {
+      border-top: 1px solid #c8c8c8;
+    }
+  }
+
+  .number {
+    text-align: right;
+  }
+
+  .active {
+    background: transparentize($success-color, 0.8);
+  }
+}

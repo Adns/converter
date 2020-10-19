@@ -1,0 +1,56 @@
+@import 'variables';
+
+:host {
+  display: block;
+  width: 100%;
+
+  .card-header {
+    justify-content: space-between;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+
+    .number {
+      width: 80px;
+    }
+
+    > * {
+      padding: 8px;
+    }
+
+    .active {
+      background: transparentize($success-color, .7);
+    }
+  }
+
+  .switch {
+    align-items: center;
+    display: flex;
+  }
+
+  .real-rate {
+    .real-rate-label {
+      font-size: .8em;
+    }
+
+    .real-rate-value {
+      font-weight: bold;
+    }
+  }
+
+  .result {
+    align-items: center;
+    display: flex;
+
+    .calculated-amount {
+      font-size: 2em;
+    }
+  }
+}
